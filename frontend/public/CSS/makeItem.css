@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+:root {
+    --main-white: #EEEBD7;
+    --main-brown: #261910;
+    --yellow: #CE8417;
+    --white: #F6F3EE;
+}
+
+body {
+    background-color: var(--main-white);
+    color: var(--main-brown);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--main-brown);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 24px;
+}
+
+header .user-img {
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-white);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+header .user-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header button {
+    background-color: var(--main-white);
+    color: var(--main-brown);
+    padding: 9px 20px;
+    border-radius: 7px;
+    border: none;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+header button:hover {
+    opacity: 0.8;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 30px 24px 40px;
+}
+
+.product-form {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: stretch;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Imagem do produto */
+.image-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.field-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.image-box {
+    flex: 1;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1.5px solid var(--main-brown);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 var(--main-brown);
+    cursor: pointer;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-box img[hidden] {
+    display: none;
+}
+
+/* Campos */
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.field > label {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.field input,
+.field textarea,
+.price-input,
+.qty-input {
+    width: 100%;
+    background-color: #fff;
+    color: var(--main-brown);
+    border: 1.5px solid var(--main-brown);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 var(--main-brown);
+    font-size: 15px;
+}
+
+.field input,
+.field textarea {
+    padding: 8px 12px;
+}
+
+.field input {
+    height: 38px;
+}
+
+.field textarea {
+    height: 100px;
+    resize: none;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.create-btn:focus-visible,
+.qty-input button:focus-visible,
+.image-box:has(+ input:focus-visible),
+.image-field input:focus-visible + .image-box {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+
+.price-input {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 6px;
+}
+
+.price-input span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.price-input input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 8px 0 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    outline: none;
+}
+
+.qty-input {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+}
+
+.qty-input button {
+    background: none;
+    border: none;
+    color: var(--main-brown);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 0 4px;
+}
+
+.qty-input input {
+    width: 50px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    text-align: center;
+    font-weight: 800;
+    font-size: 17px;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.create-btn {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 0;
+    background-color: var(--yellow);
+    color: var(--white);
+    border: 1.5px solid var(--main-brown);
+    border-radius: 6px;
+    box-shadow: 0 2px 0 var(--main-brown);
+    font-size: 22px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.create-btn:hover {
+    opacity: 0.85;
+}

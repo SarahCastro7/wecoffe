@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>WeCoffee - Main</title>
+</head>
+
+<body>
+    <header>
+        <div class="user-img">
+            <img src="" alt="" id="user-img">
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="Pages/makeItem.html">Cafés</a></li>
+                <li><a href="#">Comidas</a></li>
+                <li><a href="#">Bebidas</a></li>
+            </ul>
+        </nav>
+
+        <button id="login-btn">LOGIN</button>
+    </header>
+
+    <div class="login-modal">
+        <div class="full-box">
+            <button type="button" class="close-btn">Fechar</button>
+
+            <div class="form">
+                <div class="form-items">
+                    <h1>We<span>Coffee</span>.</h1>
+                    <p>Olá, bem-vindo de volta!</p>
+                    
+                    <form action="#">
+                        <div class="inputs">
+                            <input type="text" id="email-input" placeholder="E-mail" required>
+                            <input type="password" id="password-input" placeholder="Senha" required>
+                        </div>
+                        <button>LOGIN</button>
+                        <div class="labels">
+                            <label for="remember">
+                                <input type="checkbox" id="remember">
+                                Lembrar-me
+                            </label>
+                            
+                            <p>Ainda não tem uma conta? <a href="#">Registre-se</a>.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <img src="imgs/Img Login.png">
+        </div>
+    </div>
+
+    <main>
+        <section id="hero">
+            <div class="hero-above">
+                <div class="hero-label">
+                    <p>Olá, bem-vindo ao</p>
+                    <h1>We<span>Coffee</span>.</h1>
+                    <p>O melhor café, direto até você.</p>
+                </div>
+
+                <input type="text" class="search-bar" placeholder="Pesquise por cafés, comidas e bebidas...">
+            </div>
+
+            <p class="hero-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the
+                librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to
+                make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the
+                leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these
+                sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word
+                including versions of Lorem Ipsum.</p>
+        </section>
+
+        <section id="menu">
+            <h1>Menu</h1>
+
+            <div class="filter-buttons">
+                <button>Café</button>
+                <button>Comidas</button>
+                <button>Bebidas</button>
+            </div>
+
+            <div class="menu-grid">
+                <div id="card">
+                    <img src="" alt="" class="item-img">
+
+                    <div class="card-infos">
+                        <div class="item-labels">
+                            <p id="item-name"></p>
+                            <small id="item-desc"></small>
+                        </div>
+
+                        <div class="price-cart">
+                            <p id="item-price"></p>
+                            <div class="line"></div>
+                            <button id="add-cart-btn">ADD +</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <bitton id="see-more">
+                Ver mais
+                <img src="imgs/assets/down-arrow.svg" alt="down arrow">
+            </bitton>
+        </section>
+    </main>
+
+    <footer>
+        <div class="info1">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the
+                librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to
+                make dummy text for Letraset's Body Type sheets. </p>
+
+            <img src="imgs/Ice Coffee.png" class="coffee-img" alt="ice coffee cup">
+        </div>
+
+        <div class="info2">
+            <h1>We<span>Coffee</span>.</h1>
+
+            <div class="labels">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's.</p>
+            </div>
+            <div class="line"></div>
+            <p>© WeCoffee | Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
