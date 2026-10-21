@@ -107,7 +107,7 @@ section#hero {
     flex-direction: column;
     min-height: 80vh;
     padding: 70px 24px 40px;
-    background: url('imgs/Hero Img.png') no-repeat;
+    background: url('../imgs/Hero\ Img.png') no-repeat;
     background-size: cover;
     background-position: right center;
     
@@ -130,6 +130,10 @@ section#hero .hero-above {
         text-align: left;
         color: var(--main-brown);
     }
+
+    /* input:focus {
+
+    } */
 }
 
 
@@ -318,10 +322,11 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     color: var(--main-brown); 
-    background: url('imgs/Footer BG Img.png') no-repeat;
+    background: url('../imgs/Footer\ BG\ Img.png') no-repeat;
     background-size: cover;
     background-position: right center;
 }
+
 /* 
 footer .info1 {
     display: flex;
@@ -340,7 +345,7 @@ footer .info1 img.coffee-img {
 
 footer .info1 p {
     max-width: 650px;
-    font-size: 18px;
+    font-size: 14px;
     margin-top: 30px;
     color: var(--main-white)
 }
@@ -422,7 +427,7 @@ footer .info2 > p {
     background: none;
     border: none;
     color: var(--main-brown);
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -435,7 +440,7 @@ footer .info2 > p {
     width: 700px;
     margin: 18px 0 0 23px;
     padding: 5% 6%;
-    background: url('imgs/Left Login BG.png') no-repeat left top / 100% 100%;
+    background: url('../imgs/Left\ Login\ BG.png') no-repeat left top / 100% 100%;
 }
 
 .login-modal .form .form-items {
@@ -486,13 +491,13 @@ footer .info2 > p {
 }
 
 .login-modal .inputs #email-input {
-    background: url('imgs/assets/email-div.svg') no-repeat left 10px center;
+    background: url('../imgs/assets/email-div.svg') no-repeat left 10px center;
     background-size: 30px;
     background-color: var(--white);
 }
 
 .login-modal .inputs #password-input {
-    background: url('imgs/assets/lock-div.svg') no-repeat left 10px center;
+    background: url('../imgs/assets/lock-div.svg') no-repeat left 10px center;
     background-size: 30px;
     background-color: var(--white);
 }
