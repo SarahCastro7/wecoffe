@@ -1,115 +1,179 @@
-# Wecoffee - Guia de desenvolvimento
+# ☕ WeCoffee
 
-Este README serve como um guia para quem continuar o desenvolvimento do
-Wecoffee, explicando o que precisa ser implementado e onde cada parte
-deve ficar.
+<p align="center">
+  **Sistema de gerenciamento de cafeteria**
+  
+  Uma aplicação web para gerenciar produtos, usuários e operações de uma cafeteria, com autenticação e controle de acesso para administradores.
+</p>
 
-## 1. Usuários e permissões
+---
 
-O sistema terá dois tipos de usuário:
+## 📌 Sobre o projeto
 
--   **Comum:** poderá visualizar e pesquisar produtos, adicionar itens
-    ao carrinho e realizar compras.
--   **Chefe:** haverá dois usuários com esse perfil, responsáveis por
-    cadastrar, editar e excluir produtos.
+O **WeCoffee** é um sistema desenvolvido para facilitar o gerenciamento de uma cafeteria. A aplicação possui uma interface web integrada a uma API, com banco de dados PostgreSQL para armazenar as informações.
 
-As permissões dos chefes devem ser verificadas no backend, e não apenas
-escondendo opções no frontend.
+### ✨ Funcionalidades
 
-## 2. Banco de dados
+- 🔐 **Autenticação:** login com validação de credenciais e uso de JWT.
+- 👤 **Gerenciamento de usuários:** cadastro e atualização de informações.
+- ☕ **Gerenciamento de produtos:** consulta e cadastro de produtos.
+- 🛡️ **Controle de permissões:** funcionalidades administrativas restritas a usuários autorizados.
+- 🗄️ **Banco de dados:** armazenamento persistente das informações em PostgreSQL.
 
-Atualizar o script `backend/src/database/wecoffee.sql` para incluir as
-estruturas necessárias:
+---
 
--   **Usuários:** armazenar os dados de acesso e o tipo de usuário
-    (`comum` ou `chefe`).
--   **Cardápio:** conter seu identificador, o usuário relacionado e o
-    chefe responsável. Deve organizar os produtos em categorias, como
-    cafés, salgados e sobremesas.
--   **Produtos:** armazenar nome, quantidade disponível, preço,
-    descrição, imagem, cardápio e categoria.
--   **Carrinho:** relacionar cada usuário aos produtos escolhidos e suas
-    quantidades.
+## 🛠️ Tecnologias utilizadas
 
-Os produtos cadastrados pelos chefes devem ser salvos no banco de dados.
-As senhas devem ser armazenadas de forma segura, nunca em texto puro.
+| Tecnologia | Finalidade |
+|:--|:--|
+| HTML5 | Estrutura das páginas |
+| CSS3 | Estilização e layout |
+| JavaScript | Interatividade e comunicação com a API |
+| Node.js | Ambiente de execução do backend |
+| Express | Criação das rotas e da API |
+| PostgreSQL | Banco de dados relacional |
+| JWT | Autenticação e autorização |
 
-## 3. Backend
+---
 
-O backend já existe na pasta `backend/`. Manter a organização atual:
+## 📂 Estrutura do projeto
 
-  -----------------------------------------------------------------------
-  Arquivo/pasta                       Responsabilidade
-  ----------------------------------- -----------------------------------
-  `src/config/db.js`                  Conexão com o banco de dados.
+```text
+WeCoffee/
+├── backend/
+│   ├── routes/
+│   ├── middleware/
+│   ├── config/
+│   └── server.js
+│
+├── frontend/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
+├── database/
+│   └── wecoffee.sql
+│
+├── .env.example
+├── .gitignore
+└── README.md
+```
 
-  `src/database/wecoffee.sql`         Criação e atualização das tabelas.
+> **Observação:** a estrutura acima é ilustrativa. Ajuste os nomes das pastas e dos arquivos para corresponder exatamente à estrutura atual do repositório.
 
-  `src/routes/`                       Definição das rotas HTTP.
+---
 
-  `src/controller/`                   Recebimento das requisições e envio
-                                      das respostas.
+## ⚙️ Instalação e configuração
 
-  `src/services/`                     Regras de negócio e validações.
+### 1. Pré-requisitos
 
-  `src/repositories/`                 Consultas ao banco de dados.
+Antes de começar, certifique-se de ter instalado:
 
-  `src/app.js` e `server.js`          Configuração e inicialização do
-                                      servidor.
-  -----------------------------------------------------------------------
+- [Node.js](https://nodejs.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Git](https://git-scm.com/)
 
-Criar os arquivos necessários para produtos, cardápio e carrinho,
-seguindo o padrão já usado para usuários.
+### 2. Clone o repositório
 
-Usar os métodos HTTP conforme a operação: `GET` para consultar, `POST`
-para criar, `PUT/PATCH` para atualizar e `DELETE` para excluir. Usuários
-comuns podem consultar produtos, mas somente chefes autenticados podem
-criar, editar ou excluir produtos. O backend também deve validar os
-dados recebidos e tratar erros.
+```bash
+git clone URL_DO_REPOSITORIO
+cd WeCoffee
+```
 
-## 4. Frontend
+Substitua `URL_DO_REPOSITORIO` pelo endereço do repositório do projeto.
 
-O frontend fica na pasta `frontend/`:
+### 3. Configure o banco de dados
 
-  -----------------------------------------------------------------------
-  Arquivo/pasta                       Responsabilidade
-  ----------------------------------- -----------------------------------
-  `Pages/index.html`                  Página principal e listagem de
-                                      produtos.
+Crie o banco de dados no PostgreSQL e importe o arquivo SQL disponibilizado no projeto.
 
-  `Pages/makeItem.html`               Formulário de cadastro de produtos
-                                      para os chefes.
+```sql
+CREATE DATABASE wecoffe;
+```
 
-  `script.js`                         Interações, eventos, animações e
-                                      chamadas à API.
+Depois, execute o arquivo `wecoffee.sql` no banco criado, utilizando o pgAdmin ou o terminal do PostgreSQL.
 
-  `public/CSS/style.css`              Estilos gerais.
+### 4. Configure as variáveis de ambiente
 
-  `public/CSS/makeItem.css`           Estilos da página de cadastro.
+Crie um arquivo `.env` na pasta do backend, seguindo o modelo abaixo:
 
-  `public/imgs/`                      Imagens da interface.
-  -----------------------------------------------------------------------
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=wecoffe
+DB_USER=postgres
+DB_PASSWORD=sua_senha
+JWT_SECRET=defina_uma_chave_secreta
+PORT=3000
+```
 
-O login, a validação das credenciais e o salvamento dos produtos devem
-ser tratados pelo backend. O `script.js` fica responsável pelas
-interações da interface e por enviar as requisições necessárias à API.
+> 🔒 **Importante:** substitua os valores de exemplo pelos dados do seu ambiente. Não publique senhas ou chaves secretas no GitHub.
 
-### Botão "Ver mais"
+### 5. Instale as dependências
 
-Na página principal, a grade de produtos deve manter **quatro colunas**.
-O botão "Ver mais" deve expandir a seção para baixo e mostrar os cards
-que ficaram escondidos. Se não houver mais produtos, deverá exibir uma
-mensagem informando isso, sem recarregar a página.
+No terminal, entre na pasta do backend:
 
-## 5. Ordem sugerida
+```bash
+cd backend
+npm install
+```
 
--   [ ] Atualizar o banco de dados e seus relacionamentos.
--   [ ] Configurar e testar a conexão com o banco.
--   [ ] Implementar autenticação e permissões dos usuários.
--   [ ] Criar as rotas e funções de produtos, cardápio e carrinho.
--   [ ] Conectar o cadastro de produtos à API.
--   [ ] Implementar o botão "Ver mais" e testar as funcionalidades.
+### 6. Inicie o servidor
 
-**Observação:** antes de alterar arquivos existentes, conferir o código
-atual para preservar o que já funciona e manter o padrão de organização
-do projeto.
+```bash
+npm start
+```
+
+O comando de inicialização pode variar conforme os scripts definidos no `package.json`.
+
+---
+
+## 🧪 Testes
+
+Após iniciar o backend, verifique se a API está funcionando acessando a rota inicial configurada no servidor.
+
+```text
+http://localhost:3000
+```
+
+Para testar as demais funcionalidades, utilize o frontend ou uma ferramenta de requisições HTTP, como o [Postman](https://www.postman.com/).
+
+---
+
+## 🔐 Segurança
+
+- Senhas e credenciais devem ser mantidas fora do código-fonte.
+- Rotas administrativas devem exigir autenticação e autorização.
+- O token JWT deve ser validado nas rotas protegidas.
+- O arquivo `.env` não deve ser enviado ao repositório público.
+
+---
+
+## 👨‍💻 Desenvolvimento
+
+O projeto foi desenvolvido com o objetivo de praticar conceitos de desenvolvimento web full stack, incluindo integração entre frontend e backend, operações CRUD, autenticação de usuários e persistência de dados relacionais.
+
+---
+
+## Contas utilizadas
+
+as contas utilizadas para os testes estão aqui!
+
+```text
+Conta	E-mail	Senha	Função
+👑 Teste Admin:
+testeadmin@email.com
+senha:
+ Admin123!
+ 	
+👤 Teste:	
+teste@email.com	 
+senha:
+ Teste123!
+```
+
+
+
+<p align="center">
+  ☕ **WeCoffee** — tecnologia e café em um só lugar.
+</p>

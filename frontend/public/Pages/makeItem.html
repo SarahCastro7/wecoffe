@@ -1,13 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="../CSS/makeItem.css">
     <title>WeCoffee - Criar produto</title>
 </head>
@@ -15,28 +17,42 @@
 <body>
     <header>
         <div class="user-img">
-            <img src="" alt="" id="user-img">
+            <img src="" alt="Foto de perfil" id="user-img">
         </div>
 
-        <button><a href="../index.html">SAIR</a></button>
+        <button id="user-greeting" type="button" hidden></button>
+
+        <a href="index.html" class="back-btn">VOLTAR</a>
     </header>
 
     <main>
-        <form class="product-form" action="#">
+        <form class="product-form" id="product-form" action="#">
             <div class="image-field">
                 <span class="field-title">Imagem do Produto:</span>
 
                 <label for="product-img" class="image-box">
-                    <img src="" alt="" id="product-preview" hidden>
+                    <img src="" alt="Prévia do produto" id="product-preview" hidden>
                 </label>
-                <input type="file" id="product-img" name="image" accept="image/*" class="visually-hidden">
+
+                <input
+                    type="file"
+                    id="product-img"
+                    name="image"
+                    accept="image/*"
+                    class="visually-hidden"
+                >
             </div>
 
-            <!-- Coluna direita: campos -->
             <div class="fields">
                 <div class="field">
                     <label for="product-name">Nome do produto:</label>
-                    <input type="text" id="product-name" name="name">
+                    <input
+                        type="text"
+                        id="product-name"
+                        name="name"
+                        required
+                        maxlength="80"
+                    >
                 </div>
 
                 <div class="field">
@@ -46,7 +62,11 @@
 
                 <div class="field">
                     <label for="product-type">Tipo de produto:</label>
-                    <input type="text" id="product-type" name="type">
+                    <select id="product-type" name="type" required>
+                        <option value="cafe">Café</option>
+                        <option value="comida">Comida</option>
+                        <option value="bebida">Bebida</option>
+                    </select>
                 </div>
 
                 <div class="row">
@@ -54,24 +74,50 @@
                         <label for="product-price">Preço:</label>
                         <div class="price-input">
                             <span>R$</span>
-                            <input type="number" id="product-price" name="price" min="0" step="0.01">
+                            <input
+                                type="number"
+                                id="product-price"
+                                name="price"
+                                min="0.01"
+                                step="0.01"
+                                required
+                            >
                         </div>
                     </div>
 
                     <div class="field">
                         <label for="product-qty">Quantidade:</label>
                         <div class="qty-input">
-                            <button type="button" id="qty-minus" aria-label="Diminuir quantidade">-</button>
-                            <input type="number" id="product-qty" name="quantity" value="1" min="1">
-                            <button type="button" id="qty-plus" aria-label="Aumentar quantidade">+</button>
+                            <button
+                                type="button"
+                                id="qty-minus"
+                                aria-label="Diminuir quantidade"
+                            >-</button>
+
+                            <input
+                                type="number"
+                                id="product-qty"
+                                name="quantity"
+                                value="1"
+                                min="1"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="qty-plus"
+                                aria-label="Aumentar quantidade"
+                            >+</button>
                         </div>
                     </div>
                 </div>
 
                 <button type="submit" class="create-btn">CRIAR</button>
+                <p id="form-msg" role="status"></p>
             </div>
         </form>
     </main>
-</body>
 
+    <script src="../script.js"></script>
+</body>
 </html>

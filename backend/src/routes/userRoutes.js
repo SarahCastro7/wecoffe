@@ -1,11 +1,13 @@
-import { userController } from "../controller/userController.js";
+
 import { Router } from "express";
+import { userController } from "../controller/userController.js";
+import { autenticar } from "../middleware/authMiddleware.js";
 
-console.log("chegando no Router")
+const userRouter = Router();
 
-const userRouter = Router()
+userRouter.post("/user/login", userController.login);
+userRouter.put("/user/perfil", autenticar, userController.perfil);
+userRouter.put("/user/senha", autenticar, userController.senha);
+userRouter.put("/user/foto", autenticar, userController.foto);
 
-userRouter.get('/user/:id', userController.getById)
-userRouter.post('/user/login', userController.login)
-
-export default userRouter
+export default userRouter;
