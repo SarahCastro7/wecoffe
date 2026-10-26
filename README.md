@@ -102,8 +102,8 @@ DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=wecoffe
 DB_USER=postgres
-DB_PASSWORD=sua_senha
-JWT_SECRET=defina_uma_chave_secreta
+DB_PASSWORD=senai
+JWT_SECRET=nosso_projeto_ta_supimpa
 PORT=3000
 ```
 
