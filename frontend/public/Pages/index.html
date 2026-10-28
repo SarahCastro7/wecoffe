@@ -1,37 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
+        <link rel="stylesheet" href="../CSS/style.css">
     <title>WeCoffee</title>
-
-    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>
     <header>
         <div class="user-img">
-            <img src="" alt="Foto de perfil" id="user-img">
+            <img src="../imgs/user-icon.png" alt="" id="user-img">
         </div>
 
         <button id="user-greeting" type="button" hidden></button>
 
-        <nav>
-            <ul>
-                <li><a href="#menu">Cafés</a></li>
-                <li><a href="#menu">Comidas</a></li>
-                <li><a href="#menu">Bebidas</a></li>
-            </ul>
-        </nav>
-
-        <a
-            href="makeItem.html"
-            id="admin-create-product"
-            hidden
-        >Criar Produto</a>
-
+        <a href="makeItem.html" id="admin-create-product" hidden>Criar Produto</a>
+        
         <button id="login-btn" type="button">LOGIN</button>
     </header>
 
@@ -47,19 +38,9 @@
 
                     <form action="#" id="login-form">
                         <div class="inputs">
-                            <input
-                                type="email"
-                                id="email-input"
-                                placeholder="E-mail"
-                                required
-                            >
+                            <input type="email" id="email-input" placeholder="E-mail" required>
 
-                            <input
-                                type="password"
-                                id="password-input"
-                                placeholder="Senha"
-                                required
-                            >
+                            <input type="password" id="password-input" placeholder="Senha" required>
                         </div>
 
                         <button type="submit">LOGIN</button>
@@ -96,15 +77,10 @@
                     <p>O melhor café, direto até você.</p>
                 </div>
 
-                <input
-                    type="text"
-                    class="search-bar"
-                    placeholder="Pesquise por cafés, comidas e bebidas..."
-                >
             </div>
 
             <p class="hero-text">
-                Encontre seus cafés, comidas e bebidas favoritos no WeCoffee.
+                Bem-vindo à WeCoffee, o lugar perfeito para quem ama um bom café! Aqui você encontra uma grande variedade de opções, desde o tradicional cafezinho até deliciosos expressos, cafés gelados, combinações com sorvete e muito mais. Além disso, contamos com um cardápio repleto de comidas, doces, salgados e bebidas para todos os gostos. Na WeCoffee, você pode escolher seus produtos favoritos, fazer seu pedido diretamente pelo nosso site e decidir como deseja recebê-lo: retirando em nossa loja física ou aproveitando a comodidade da entrega em sua casa. Tudo isso com praticidade, qualidade e aquele sabor especial que só a WeCoffee oferece!
             </p>
         </section>
 
@@ -112,24 +88,14 @@
             <h1>Menu</h1>
 
             <div class="filter-buttons">
-                <button
-                    id="coffee-filter"
-                    data-tipo="cafe"
-                    type="button"
-                >Café</button>
+                <button id="coffee-filter" data-tipo="cafe" type="button">Café</button>
 
-                <button
-                    id="food-filter"
-                    data-tipo="comida"
-                    type="button"
-                >Comidas</button>
+                <button id="food-filter" data-tipo="comida" type="button">Comidas</button>
 
-                <button
-                    id="drink-filter"
-                    data-tipo="bebida"
-                    type="button"
-                >Bebidas</button>
+                <button id="drink-filter" data-tipo="bebida" type="button">Bebidas</button>
             </div>
+
+            <input type="text" class="search-bar" placeholder="Pesquise por cafés, comidas e bebidas...">
 
             <div class="menu-grid">
                 <div class="card">
@@ -147,10 +113,7 @@
 
                             <div class="line"></div>
 
-                            <button
-                                type="button"
-                                class="add-cart-btn"
-                            >ADD +</button>
+                            <button type="button" class="add-cart-btn">ADD +</button>
                         </div>
                     </div>
                 </div>
@@ -161,23 +124,16 @@
             <button type="button" id="see-more">
                 Ver mais
 
-                <img
-                    src="../imgs/assets/down-arrow.svg"
-                    alt="Seta para baixo"
-                >
+                <img src="../imgs/assets/down-arrow.svg" alt="Seta para baixo">
             </button>
         </section>
     </main>
 
     <footer>
         <div class="info1">
-            <p>Seu café favorito, em um só lugar.</p>
+            <p>Na WeCoffee, cada xícara é uma experiência especial. Descubra novos sabores, aproveite momentos únicos e encontre o café perfeito para acompanhar o seu dia.</p>
 
-            <img
-                src="../imgs/Ice Coffee.png"
-                class="coffee-img"
-                alt="Café gelado"
-            >
+            <img src="../imgs/Ice Coffee.png" class="coffee-img" alt="Café gelado">
         </div>
 
         <div class="info2">
@@ -199,4 +155,5 @@
     <script src="../cart.js"></script>
     <script src="../admin-products.js"></script>
 </body>
+
 </html>

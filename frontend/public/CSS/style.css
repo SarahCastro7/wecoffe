@@ -48,18 +48,18 @@ header {
 }
 
 header .user-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: var(--main-white);
+    background-color: var(--yellow);
     border-radius: 50%;
-    object-fit: cover;
 }
 
 header .user-img img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    width: 60%;
+    height: 60%;
 }
 
 
@@ -120,20 +120,6 @@ section#hero .hero-above {
     text-align: center;
     /* margin-top: 70px; */
 
-    input {
-        width: min(600px, 100%);
-        border-radius: 15px;
-        border: 1px solid var(--main-brown);
-        padding: 5px 20px;
-        margin-top: 20px;
-        font-size: 16px;
-        text-align: left;
-        color: var(--main-brown);
-    }
-
-    /* input:focus {
-
-    } */
 }
 
 
@@ -158,10 +144,10 @@ section#hero .hero-label {
 }
 
 section#hero p.hero-text {
-    max-width: 700px;
+    max-width: 800px;
     align-self: flex-start;
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 36px;
+    font-size: 18px;
     color: var(--main-brown);
     margin-top: 50px;
     /* margin-left: 24px; */
@@ -201,6 +187,18 @@ section#menu .filter-buttons button {
 
 section#menu .filter-buttons button:hover {
     opacity: 0.8;
+}
+
+section#menu .search-bar {
+    
+        width: min(385px, 100%);
+        border-radius: 10px;
+        border: 1px solid var(--main-brown);
+        padding: 5px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        text-align: left;
+        color: var(--main-brown);
 }
 
 /* Grid - database incoming */
@@ -345,7 +343,7 @@ footer .info1 img.coffee-img {
 
 footer .info1 p {
     max-width: 650px;
-    font-size: 14px;
+    font-size: 17px;
     margin-top: 30px;
     color: var(--main-white)
 }
@@ -738,31 +736,6 @@ header #user-greeting {
     flex-shrink: 0;
 }
 
-/* Organiza os links de navegação */
-header nav {
-    margin-left: 0 !important;
-    margin-right: 24px !important;
-    flex-shrink: 0;
-}
-
-header nav ul {
-    display: flex;
-    align-items: center;
-    gap: 30px !important;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-header nav ul li {
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li a {
-    white-space: nowrap;
-}
-
 /* Evita que Criar Produto grude na navegação */
 header #admin-create-product {
     margin-left: 12px !important;
@@ -777,7 +750,6 @@ header #login-btn {
 
 header #orders-button {
     margin-left: 8px !important;
-    flex-shrink: 0;
 }
 
 /* Esconde os botões de edição para usuários comuns */

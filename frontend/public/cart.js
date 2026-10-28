@@ -48,9 +48,9 @@
                 margin-left: 8px !important;
                 margin-right: 0 !important;
                 flex-shrink: 0;
-                padding: 10px 16px;
+                padding: 7px 16px;
                 border: 0;
-                border-radius: 8px;
+                border-radius: 7px;
                 background: var(--yellow, #d88b0d);
                 color: var(--main-brown, #2a160b);
                 font: inherit;

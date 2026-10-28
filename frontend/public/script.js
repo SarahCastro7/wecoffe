@@ -90,8 +90,8 @@ function mostrarUsuario() {
     const user = getUser();
 
     if (userImg) {
-        userImg.src = user?.foto_usuario || "";
-        userImg.alt = user ? "Foto de perfil" : "Foto de perfil — entrar";
+        userImg.src = user?.foto_usuario || userImg.src;
+        userImg.alt = user ? "Foto de perfil" : "Entrar";
         userImg.style.cursor = "pointer";
         userImg.title = user
             ? "Abrir meu perfil"
